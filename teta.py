@@ -19,7 +19,8 @@ def End(positions):
                     if positions.positions[i][z].numb == str(value):
                          print(f"{player} wins {amount}")
 
-def Play(p,positions,deck):
+def Play(positions,deck):
+     p = 0
      for i in range (32):
           positions.play(p,deck.cards[0])
           deck.remove()
@@ -86,8 +87,5 @@ if __name__ == '__main__':
      deck.shuffle()
      positions = Positions()
      print(deck.last().numb,deck.last().color)
-     positions.bet(0,"K",100,1)
-     positions.bet(2,"K",100,3)
-     positions.bet(4,"K",100,5)
-     positions.bet(6,"K",100,7)
-     Play(0,positions,deck)
+     print("if you want to bet, type positions.bet(your position, value you are betting on, ammount of money and then dealers position")
+     print("After bets, type Play(positions,deck)")
