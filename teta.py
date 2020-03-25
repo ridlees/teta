@@ -7,18 +7,18 @@ pravidla:   32 karet (7,8,9,10,J,Q,K,A)
             padne-li typ (neřeším barvu, ale vizuálně jo), vyhrává za každou co tam padne
         
 '''
+
 def End(positions):
      for i in range (8):
           le = len(positions.positions[i])
           if le > 4:
-               player = positions.positions[0][0][0]
-               value = positions.positions[0][0][1]
-               amount = positions.positions[0][0][2]
+               player = positions.positions[i][0][0]
+               value = positions.positions[i][0][1]
+               amount = positions.positions[i][0][2]
                for z in range (1,le):
                     if positions.positions[i][z].numb == str(value):
                          print(f"{player} wins {amount}")
-           
-     
+
 def Play(p,positions,deck):
      for i in range (32):
           positions.play(p,deck.cards[0])
@@ -90,3 +90,4 @@ if __name__ == '__main__':
      positions.bet(2,"K",100,3)
      positions.bet(4,"K",100,5)
      positions.bet(6,"K",100,7)
+     Play(0,positions,deck)
